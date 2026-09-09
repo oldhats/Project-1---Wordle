@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="70sp"
         android:background="@color/purple"
@@ -28,27 +29,35 @@
 
     <!-- TextView to Display the Message -->
 
-    <EditText
-        android:id="@+id/inputField"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="242dp"
-        android:layout_height="79dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Enter 4 letter guess here"
+        app:counterEnabled="true"
+        app:counterMaxLength="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guessButton"
         app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="parent"
-        app:counterEnabled="true"
-        app:counterMaxLength="4"
-        android:ems="4"
-        />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter 4 letter guess"
+            android:inputType="textCapCharacters"
+            android:maxLength="4"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/guessButton"
         android:layout_width="127dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="16dp"
         android:text="GUESS!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -69,16 +78,25 @@
 
     <TextView
         android:id="@+id/answerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_width="244dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
         android:text="TextView"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/inputField"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="127dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:text="RESET"
+        app:layout_constraintBottom_toTopOf="@+id/guessButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
