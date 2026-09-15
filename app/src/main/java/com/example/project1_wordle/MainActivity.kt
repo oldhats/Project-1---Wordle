@@ -54,12 +54,6 @@ class MainActivity : AppCompatActivity() {
 
             if (guessCount < 7) {            // Build the new lines for this guess
 
-            // Cant figure out how to get confetti to show
-                if (userInput == wordToGuess){
-                    CommonConfetti.rainingConfetti(rootLayout,
-                        intArrayOf(Color.YELLOW, Color.GREEN, Color.MAGENTA))
-                    }
-
                 val newEntry =
                     "Guess #$guessCount \t\t\t\t\t\t\t\t\t\t\t\t\t\t $userInput\nGuess #$guessCount  Check \t\t\t $guessResult\n"
 
@@ -69,8 +63,6 @@ class MainActivity : AppCompatActivity() {
                 // Update the TextView
                 displayText.text = history.toString()
                 answerText.text = "$wordToGuess"
-
-                answerText.isVisible = true
 
             } else {
                 answerText.text = "$wordToGuess"
